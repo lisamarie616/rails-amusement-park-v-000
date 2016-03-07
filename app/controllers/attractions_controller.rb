@@ -32,12 +32,12 @@ class AttractionsController < ApplicationController
   def update
   end
 
-  def ride
-    attraction = Attraction.find(params[:id])
-    ride = attraction.rides.create(user: current_user)
-    flash[:notice] = ride.take_ride
-    redirect_to user_path(current_user)
-  end
+  # def ride
+  #   attraction = Attraction.find(params[:id])
+  #   ride = attraction.rides.create(user: current_user)
+  #   flash[:notice] = ride.take_ride
+  #   redirect_to user_path(current_user)
+  # end
 
   private
     def attraction_params

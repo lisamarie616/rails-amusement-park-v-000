@@ -1,0 +1,8 @@
+<tr>
+  <td>pic</td>
+  <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) unless current_user.try(:admin?) %></td>
+  <td><%= attraction.try(:tickets) %></td>
+  <% if current_user.try(:admin?) %>
+    <td><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></td>
+  <% end %>
+</tr>
